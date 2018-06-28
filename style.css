@@ -2,11 +2,35 @@
     box-sizing: border-box;
 }
 
+body {
+
+}
+
 .images {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px dashed red;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    margin: 10px;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden; 
+    /* this makes it so thing are clickable under the elemnent */
 }
 
 .modal-container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
     border: 1px dashed green;
     width: 550px;
     height: 550px;
