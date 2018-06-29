@@ -7,6 +7,7 @@ const modal = {
     this.render();
   },
   cacheDom() {
+    this.backgroundOverlay = document.querySelector('.bg');
     this.modalContainer = document.querySelector('.modal-container');
     this.closeBtn = document.querySelector('.close');
     this.modalImage = document.querySelector('.modal-image');
@@ -14,6 +15,7 @@ const modal = {
   },
   bindEventListeners() {
     this.closeBtn.addEventListener('click', this.hideModal.bind(this));
+    this.backgroundOverlay.addEventListener('click', this.hideModal.bind(this));
     this.thumbnails.forEach((thumbnail) => {
       thumbnail.addEventListener('click', this.showModal.bind(this));
     });
@@ -31,11 +33,14 @@ const modal = {
   render() {
     if (this.isHidden) {
       this.modalContainer.classList.add('hidden');
+      this.backgroundOverlay.classList.add('hidden');
     } else {
       this.modalContainer.classList.remove('hidden');
+      this.backgroundOverlay.classList.remove('hidden');
       this.modalImage.src = this.selectedImage;
     }
   },
 };
+
 
 modal.init();
