@@ -32,6 +32,7 @@ margin:0;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    transition: all .5s ease-in-out;
     z-index: 1;
     border: 1px dashed green;
     width: 550px;
